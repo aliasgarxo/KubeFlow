@@ -52,5 +52,10 @@ pipeline {
                 sh "docker push dullhuke/dullhuke:latest"
             }
         }
+        stage('deploy in k8s'){
+            steps{
+                sh "kubectl apply -f k8sproj.yaml"
+            }
+        }
     }
 }
