@@ -49,7 +49,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'CRED_DOCKER', variable: 'CRED_DOCKER')]) {
                     sh "docker login -u=dullhuke -p=${CRED_DOCKER}"
                 }
-                docker push dullhuke/dullhuke:latest
+                sh "docker push dullhuke/dullhuke:latest"
             }
         }
     }
